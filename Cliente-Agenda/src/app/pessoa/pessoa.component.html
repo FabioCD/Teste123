@@ -1,0 +1,87 @@
+<div class="container">
+    <form>
+        <div class="card-header">
+            <div class="row">
+                <div class="col-8">
+                    Pessoas
+                </div>
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary" (click)="adicionar()">Adicionar</button> | 
+                    <button type="button" class="btn btn-warning" (click)="alterar()">Alterar</button> | 
+                    <button type="button" class="btn btn-danger" (click)="excluir()">Excluir</button>
+                </div>
+            </div>    
+        </div>
+        <div class="alert alert-primary" role="alert">
+            {{mens}}
+        </div>
+            <div class="card-body">
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label for="inputCodigo">Código</label>
+                        <input type="number" class="form-control" name="inputCodigo" [(ngModel)]="obj.id">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputNome">Nome</label>
+                        <input type="text" class="form-control" name="inputNome" [(ngModel)]="obj.nome">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputCpfCnpj">CPF/CNPJ</label>
+                        <input type="text" class="form-control" name="inputCpfCnpj" [(ngModel)]="obj.cpfCnpj">
+                    </div>
+                </div>
+            
+                <div class="form-row">
+                    <div class="form-group  col-md-4">
+                        <label for="inputTelefone">Telefone</label>
+                        <input type="tel" class="form-control" name="inputTelefone"  [(ngModel)]="obj.telefone">
+                    </div>
+                    <div class="form-group  col-md-4">
+                        <label for="inputEmail">E-mail</label>
+                        <input type="email" class="form-control" name="inputEmail"  [(ngModel)]="obj.email">
+                    </div>
+                    <div class="form-group  col-md-4">
+                        <label for="inputFuncao">Função</label>
+                        <input type="text" class="form-control" name="inputFuncao"  [(ngModel)]="obj.funcao">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group  col-md-4">
+                        <label for="inputLogin">Login</label>
+                        <input type="text" class="form-control" name="inputLogin"  [(ngModel)]="obj.login">
+                    </div>
+                    <div class="form-group  col-md-4">
+                        <label for="inputSenha">Senha</label>
+                        <input type="password" class="form-control" name="inputSenha"  [(ngModel)]="obj.senha">
+                    </div>
+                    <div class="form-group  col-md-4">
+                        <label for="inputPerfil">Perfil</label>
+                        <input type="text" class="form-control" name="inputPerfil"  [(ngModel)]="obj.perfil">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <table class="table">
+                        <th scope="col"> Código </th>
+                        <th scope="col"> Nome </th>
+                        <th scope="col"> CPF/CNPJ </th>
+                        <th scope="col"> Telefone </th>
+                        <th scope="col"> Email </th>
+                        <th scope="col"> ... </th>
+                        <tr *ngFor="let p of lista">
+                            <td>{{p.id}}</td>
+                            <td>{{p.nome}}</td>
+                            <td>{{p.cpfCnpj}}</td>
+                            <td>{{p.telefone}}</td>
+                            <td>{{p.email}}</td>
+                            <td><button type="button" class="btn btn-secondary" (click)="carregarDados(p)">Carregar</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    
